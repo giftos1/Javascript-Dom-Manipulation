@@ -4,3 +4,4 @@
 - Create Elements
 - Add elements 
 - Modify Text
+- Traversing the DOM
