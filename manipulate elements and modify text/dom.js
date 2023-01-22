@@ -1,7 +1,7 @@
 // DOM Manipulation
 
 const title = document.getElementById('heading');
-title.style.color = 'blue';
+title.style.color = 'gold';
 console.log(title);
 
 const listItems = document.querySelectorAll('.list-items');
@@ -14,8 +14,8 @@ for (i = 0; i < listItems.length; i++) {
 //  Creating Elements
 const ul = document.querySelector('ul');
 const li = document.createElement('li');
-ul.append(li);
 // Adding Elements
+ul.append(li);
 // Modifying the text
 const firstListItem = document.querySelector('.list-items');
 // console.log(firstListItem.innerText);
@@ -30,6 +30,38 @@ console.log(li.classList.contains('list-items')); //returns true
 
 // remove element
 li.remove(); //removes the list-item
+
+// Parent Node 
+console.log(ul.parentNode);
+console.log(ul.parentNode.parentNode);
+console.log(ul.parentElement);
+console.log(ul.parentElement.parentElement);
+
+const html = document.documentElement;
+console.log(html.parentNode); //rather use the parentNode
+console.log(html.parentElement);
+
+// Child Node Traversal
+console.log(ul.childNodes); // indentantion are counted as texts
+console.log(ul.firstChild); 
+console.log(ul.lastChild);
+
+// ul.firstChild.style.backgroundColor = 'blue';  // an error is generated because the firstChild is a text node due to indentantion
+// ul.childNodes[1].style.backgroundColor = 'blue';
+
+console.log(ul.children);
+console.log(ul.firstElementChild);
+console.log(ul.lastElementChild);
+
+// Sibling Node Traversal
+
+// console.log(ul.previousSibling); // better to use previousElementSibling
+// console.log(ul.nextSibling); // better to use nextElementSibling
+
+console.log(ul.nextElementSibling); // null
+console.log(ul.previousElementSibling); // h1 element
+const div = document.querySelector('div');
+console.log(div.childNodes);
 // console.log(title.getAttribute('id'));
 
 // GetElementById
